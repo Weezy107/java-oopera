@@ -1,14 +1,14 @@
 public class Main {
     public static void main(String[] args) {
-        Actor actor1 = new Actor("Анна", "Смирнова", "женский", 170.0);
-        Actor actor2 = new Actor("Александр", "Иванов", "мужской", 185.0);
-        Actor actor3 = new Actor("Мария", "Петрова", "женский", 165.0);
+        Actor actor1 = new Actor("Анна", "Смирнова", Gender.ЖЕНСКИЙ, 170.0);
+        Actor actor2 = new Actor("Александр", "Иванов", Gender.МУЖСКОЙ, 185.0);
+        Actor actor3 = new Actor("Мария", "Петрова", Gender.ЖЕНСКИЙ, 165.0);
 
-        Director director1 = new Director("Иван", "Петров", "мужской", 10);
-        Director director2 = new Director("Сергей", "Васильев", "мужской", 8);
+        Director director1 = new Director("Иван", "Петров", Gender.МУЖСКОЙ, 10);
+        Director director2 = new Director("Сергей", "Васильев", Gender.МУЖСКОЙ, 8);
 
-        Person musicAuthor = new Person("Сергей", "Прокофьев", "мужской");
-        Person choreographer = new Person("Юрий", "Григорович", "мужской");
+        Person musicAuthor = new Person("Сергей", "Прокофьев", Gender.МУЖСКОЙ);
+        Person choreographer = new Person("Юрий", "Григорович", Gender.МУЖСКОЙ);
 
         Show show = new Show("Гамлет", 180, director1);
         Opera opera = new Opera("Ромео и Джульетта", 210, director2,
@@ -30,8 +30,8 @@ public class Main {
 
         System.out.println("Обновлённый список актёров в спектакле 'Гамлет' после замены: " + show.getListOfActors());
 
-        Actor nonExistingActor = new Actor("Виктор", "Соколов", "мужской", 190.0);
-        if (!show.replaceActor(nonExistingActor, new Actor("Новый", "Актёр", "мужской", 180.0))) {
+        Actor nonExistingActor = new Actor("Виктор", "Соколов", Gender.МУЖСКОЙ, 190.0);
+        if (!show.replaceActor(nonExistingActor, new Actor("Новый", "Актёр", Gender.МУЖСКОЙ, 180.0))) {
             System.out.println("Актёр с фамилией Соколов не найден в списке.");
         }
 
