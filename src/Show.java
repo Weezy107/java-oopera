@@ -14,14 +14,12 @@ public class Show {
         this.listOfActors = new ArrayList<>();
     }
 
-    public boolean addActor(Actor actor) {
+    public void addActor(Actor actor) {
         if (listOfActors.contains(actor)) {
             System.out.println("Актёр " + actor.getFirstName() + " "
                     + actor.getLastName() + " уже участвует в спектакле.");
-            return false;
         } else {
             listOfActors.add(actor);
-            return true;
         }
     }
 
@@ -29,14 +27,32 @@ public class Show {
         return listOfActors.remove(actor);
     }
 
-    public boolean replaceActor(Actor oldActor, Actor newActor) {
-        int index = listOfActors.indexOf(oldActor);
-        if (index != -1) {
-            listOfActors.set(index, newActor);
-            return true;
+    public void replaceActor(Actor newActor, String previousActorSurname) {
+        for (int i = 0; i < listOfActors.size(); i++) {
+            Actor actor = listOfActors.get(i);
+            if (actor.getLastName().equals(previousActorSurname)) {
+                listOfActors.set(i, newActor);
+            }
         }
-        return false;
+        System.out.println("Актёр с фамилией " + previousActorSurname + " не найден.");
     }
+
+    public void printListOfActors() {
+        if (listOfActors.isEmpty()) {
+            System.out.println("В спектакле нет актёров.");
+            return;
+        }
+
+        System.out.println("Список актёров спектакля '" + title + "':");
+        for (Actor actor : listOfActors) {
+            System.out.println("- " + actor.toString());
+        }
+    }
+
+    public void printDirector() {
+        System.out.println(director.getFirstName() + director.getLastName());
+    }
+
 
     @Override
     public String toString() {
