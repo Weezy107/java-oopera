@@ -2,44 +2,16 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Show {
-    private String title;
-    private int duration;
-    private Director director;
-    private List<Actor> listOfActors;
+    protected String title;
+    protected int duration;
+    protected Director director;
+    protected List<Actor> listOfActors;
 
     public Show(String title, int duration, Director director) {
         this.title = title;
         this.duration = duration;
         this.director = director;
         this.listOfActors = new ArrayList<>();
-    }
-
-    public String getTitle() {
-        return title;
-    }
-
-    public int getDuration() {
-        return duration;
-    }
-
-    public Director getDirector() {
-        return director;
-    }
-
-    public List<Actor> getListOfActors() {
-        return listOfActors;
-    }
-
-    public void setTitle(String title) {
-        this.title = title;
-    }
-
-    public void setDuration(int duration) {
-        this.duration = duration;
-    }
-
-    public void setDirector(Director director) {
-        this.director = director;
     }
 
     public boolean addActor(Actor actor) {
