@@ -25,8 +25,7 @@ public class Main {
         opera.printListOfActors();
         ballet.printListOfActors();
 
-        show.removeActor(actor3);
-        show.addActor(actor2);
+        show.replaceActor(actor2,actor3.getLastName());
 
         System.out.println("Обновлённый список актёров в спектакле 'Гамлет' после замены: ");
         show.printListOfActors();

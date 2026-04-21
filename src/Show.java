@@ -32,10 +32,13 @@ public class Show {
             Actor actor = listOfActors.get(i);
             if (actor.getLastName().equals(previousActorSurname)) {
                 listOfActors.set(i, newActor);
+                System.out.println("Актёр успешно заменён.");
+                return;
             }
         }
         System.out.println("Актёр с фамилией " + previousActorSurname + " не найден.");
     }
+
 
     public void printListOfActors() {
         if (listOfActors.isEmpty()) {
