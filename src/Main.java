@@ -21,11 +21,8 @@ public class Main {
         opera.addActor(actor2);
         ballet.addActor(actor3);
 
-        System.out.println("Список актёров в спектакле 'Гамлет': ");
         show.printListOfActors();
-        System.out.println("Список актёров в опере 'Ромео и Джульетта': ");
         opera.printListOfActors();
-        System.out.println("Список актёров в балете 'Щелкунчик': ");
         ballet.printListOfActors();
 
         show.removeActor(actor3);
